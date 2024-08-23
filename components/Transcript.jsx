@@ -1,7 +1,16 @@
 import React from 'react';
-import data from '@/data/getTranscriptDialog4.json';
+import { getTranscript } from '@/services/transcriptServices';
 
-const Transcript = () => {
+
+const Transcript = async ({ projectID, TranscriptID }) => {
+  let data = [];
+  
+  try {
+    data = await getTranscript(projectID, TranscriptID);
+  } catch (error) {
+    console.error('Failed to load transcripts:', error);
+  }
+
   return (
     <div className='h-full w-full p-4 flex flex-col bg-white border-l border-gray-200'>
       <div className='flex-1 overflow-auto'>

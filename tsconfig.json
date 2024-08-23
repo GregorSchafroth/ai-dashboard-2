@@ -21,6 +21,14 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "services/transcriptServices.js",
+    "app/transcripts/[projectID]/page.jsx",
+    "components/Transcripts.jsx"
+, "components/Transcript.jsx"  ],
   "exclude": ["node_modules"]
 }

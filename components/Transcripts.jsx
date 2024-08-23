@@ -1,26 +1,23 @@
+import Link from 'next/link';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import data from '@/data/fetchProjectTranscripts.json';
+import { getTranscripts } from '@/services/transcriptServices';
 
-import type {
-  InferGetStaticPropsType,
-  GetStaticProps,
-  GetStaticPaths,
-} from 'next'
+const Transcripts = async ({ projectID, transcriptID }) => {
+  let data = [];
 
-type Repo = {
-  name: string
-  stargazers_count: number
-}
-
-
-const Transcripts = async () => {
+  try {
+    data = await getTranscripts(projectID);
+  } catch (error) {
+    console.error('Failed to load transcripts:', error);
+  }
   return (
     <ScrollArea className='h-max w-full p-2'>
       <div className='flex flex-col gap-2 pt-0'>
         {data.map((item) => (
-          <div
+          <Link
             key={item._id}
-            className='flex flex-col items-start gap-2 rounded-lg border p-3 text-left text-sm transition-all hover:bg-accent'
+            href={`/transcripts/${projectID}/${item._id}`}
+            className={`flex flex-col items-start gap-2 rounded-lg border p-3 text-left text-sm transition-all hover:bg-accent ${item._id === transcriptID && "bg-muted" }`}
           >
             <div className='flex w-full flex-col gap-1 truncate'>
               <div className='flex items-center'>
@@ -33,7 +30,7 @@ const Transcripts = async () => {
                 Browser: {item.browser} | Device: {item.device} | OS: {item.os}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </ScrollArea>
