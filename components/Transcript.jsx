@@ -1,12 +1,11 @@
 import React from 'react';
 import { getTranscript } from '@/services/transcriptServices';
 
-
-const Transcript = async ({ projectID, TranscriptID }) => {
+const Transcript = async ({ projectID, transcriptID }) => {
   let data = [];
-  
+
   try {
-    data = await getTranscript(projectID, TranscriptID);
+    data = await getTranscript(projectID, transcriptID);
   } catch (error) {
     console.error('Failed to load transcripts:', error);
   }
@@ -17,7 +16,7 @@ const Transcript = async ({ projectID, TranscriptID }) => {
         <div className='flex flex-col gap-4'>
           {data
             .filter((item) => item.type === 'text' || item.type === 'request')
-            .map((item, key) => (
+            .map((item, key) => (   
               <div
                 key={key}
                 className={`flex ${
@@ -27,7 +26,11 @@ const Transcript = async ({ projectID, TranscriptID }) => {
                 <div
                   className={`max-w-lg px-4 py-2 rounded-lg text-sm ${
                     item.type === 'request'
-                      ? 'bg-blue-500 text-white ml-8'
+                      ? item.payload?.payload?.query
+                        ? 'bg-red-800 text-white ml-8'
+                        : item.payload?.payload?.label
+                          ? 'bg-red-500 text-white ml-8'
+                          : 'bg-gray-400 text-white ml-8'
                       : 'bg-gray-100 text-gray-800 mr-8'
                   }`}
                 >
@@ -37,9 +40,21 @@ const Transcript = async ({ projectID, TranscriptID }) => {
                   </div>
                   <div>
                     {item.type === 'request' &&
-                    typeof item.payload?.payload?.query === 'string'
-                      ? item.payload.payload.query
-                      : null}
+                      (() => {
+                        if (item.payload?.type === 'launch') {
+                          return item.payload?.type;
+                        } else if (
+                          typeof item.payload?.payload?.query === 'string'
+                        ) {
+                          return item.payload.payload.query;
+                        } else if (
+                          typeof item.payload?.payload?.label === 'string'
+                        ) {
+                          return item.payload.payload.label;
+                        } else {
+                          return null;
+                        }
+                      })()}
                   </div>
                 </div>
               </div>

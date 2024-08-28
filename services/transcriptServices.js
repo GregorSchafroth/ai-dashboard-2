@@ -18,9 +18,12 @@ export async function getTranscripts(projectID) {
 
 export async function getTranscript(projectID, transcriptID) {
 
-  // const url = `https://api.voiceflow.com/v2/transcripts/${projectID}/${transcriptID}`;
-  const url = `https://api.voiceflow.com/v2/transcripts/6661676863f440c855dad674/66c84610f8ef6c030bb2280e`;
+  const url = `https://api.voiceflow.com/v2/transcripts/${projectID}/${transcriptID}`;
+  const urlOld = `https://api.voiceflow.com/v2/transcripts/6661676863f440c855dad674/66c84610f8ef6c030bb2280e`;
 
+  console.log("url", url)
+  console.log("urlOld", urlOld)
+  
   const options = {
     method: 'GET',
     headers: {

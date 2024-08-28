@@ -12,12 +12,10 @@ export default function Home() {
       <ResizablePanelGroup direction='horizontal'>
         <ResizablePanel className='!overflow-auto'>
           <h2 className='text-2xl m-2'>All Transcripts</h2><hr />
-          <Transcripts />
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel>
           <h2 className='text-2xl m-2'>Selected Transcript</h2><hr />
-          <Transcript />
         </ResizablePanel>
       </ResizablePanelGroup>
     </>

@@ -6,7 +6,7 @@ const Transcripts = async ({ projectID, transcriptID }) => {
   let data = [];
 
   try {
-    data = await getTranscripts(projectID);
+    data = await getTranscripts(projectID, transcriptID);
   } catch (error) {
     console.error('Failed to load transcripts:', error);
   }

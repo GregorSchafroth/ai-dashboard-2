@@ -25,7 +25,7 @@ export default function RootLayout({
         <hr />
         <main className='flex-grow overflow-auto'>{children}</main>
         <hr />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
