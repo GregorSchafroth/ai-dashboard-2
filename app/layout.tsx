@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,16 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning={true}>
-      <body
-        className={`${inter.className} flex flex-col h-screen overflow-hidden`}
-      >
-        <Header />
-        <hr />
-        <main className='flex-grow overflow-auto'>{children}</main>
-        <hr />
-        {/* <Footer /> */}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang='en' suppressHydrationWarning={true}>
+        <body
+          className={`${inter.className} flex flex-col h-screen overflow-hidden`}
+        >
+          <Header />
+          <hr />
+          <main className='flex-grow overflow-auto'>{children}</main>
+          <hr />
+          {/* <Footer /> */}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
