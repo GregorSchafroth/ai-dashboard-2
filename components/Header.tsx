@@ -6,10 +6,16 @@ import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 const Header = () => {
   return (
     <header className='bg-red-100'>
-      <div className='flex items-center justify-between m-4'>
-        <Link href='/'>
-          <h1 className='text-4xl flex items-center  gap-2'>
-            <Image src={logo} alt='Swiss AI Automation' height={40} />
+      <div className='flex flex-row items-center justify-between m-4'>
+        <Link href='/' className='flex flex-row gap-2'>
+          <Image
+            src={logo}
+            alt='Swiss AI Automation'
+            height={40}
+            width={40}
+            className='object-contain'
+          />
+           <h1 className='text-4xl items-center gap-2 hidden md:flex'>
             Swiss AI Automation Dashboard
           </h1>
         </Link>
@@ -30,17 +36,12 @@ const Header = () => {
           />
         </SignedIn>
         <SignedOut>
-          <div>
-            <Link
-              href='sign-in'
-              className='hover:text-gray-600 mr-4'
-            >
+          <div className='flex'>
+            <Link href='sign-in' className='hover:text-gray-600 mr-4'>
               Sign In
             </Link>
-            <Link
-              href='sign-up'
-              className='hover:text-gray-600 mr-4'
-            >
+
+            <Link href='sign-up' className='hover:text-gray-600 mr-4'>
               Sign Up
             </Link>
           </div>
