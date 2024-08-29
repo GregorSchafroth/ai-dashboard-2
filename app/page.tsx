@@ -14,7 +14,7 @@ export default function Home() {
           <h2 className='text-2xl m-2'>All Transcripts</h2><hr />
         </ResizablePanel>
         <ResizableHandle withHandle />
-        <ResizablePanel>
+        <ResizablePanel className='!overflow-auto'>
           <h2 className='text-2xl m-2'>Selected Transcript</h2><hr />
         </ResizablePanel>
       </ResizablePanelGroup>

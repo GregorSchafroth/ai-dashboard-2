@@ -16,7 +16,7 @@ export default function Home({ params }) {
           <Transcripts projectID={params.projectID} transcriptID={params.transcriptID} />
         </ResizablePanel>
         <ResizableHandle withHandle />
-        <ResizablePanel>
+        <ResizablePanel className='!overflow-auto'>
           <h2 className='text-2xl m-2 truncate'>Selected Transcript</h2><hr />
           <Transcript projectID={params.projectID} transcriptID={params.transcriptID} />
         </ResizablePanel>
