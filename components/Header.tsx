@@ -33,13 +33,13 @@ const Header = () => {
           <div>
             <Link
               href='sign-in'
-              className='text-gray-300 hover:text-white mr-4'
+              className='hover:text-gray-600 mr-4'
             >
               Sign In
             </Link>
             <Link
               href='sign-up'
-              className='text-gray-300 hover:text-white mr-4'
+              className='hover:text-gray-600 mr-4'
             >
               Sign Up
             </Link>
