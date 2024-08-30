@@ -4,7 +4,10 @@ import { Button } from '@/components/ui/button';
 
 export default async function Home() {
   const user = await currentUser();
-  const userEmail = user.externalAccounts[0].emailAddress;
+  const userEmail = user?.emailAddresses?.[0]?.emailAddress;
+
+  console.log('user', user)
+  console.log('userEmail', userEmail)
 
   let dashLink = '/unauthorized';
 
