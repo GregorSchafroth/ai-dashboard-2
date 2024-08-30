@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logo from '../img/logo.png';
+import logo from '../img/logo2.png';
 import Link from 'next/link';
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
@@ -12,7 +12,7 @@ const Header = () => {
             src={logo}
             alt='Swiss AI Automation'
             height={40}
-            width={40}
+            // width={40}
             className='object-contain'
           />
            <h1 className='text-4xl items-center gap-2 hidden md:flex'>
