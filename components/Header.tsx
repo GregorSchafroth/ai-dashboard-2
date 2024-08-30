@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className='bg-red-100'>
       <div className='flex flex-row items-center justify-between m-4'>
-        <Link href='/' className='flex flex-row gap-2'>
+        <Link href='/' className='flex flex-row gap-2 items-center'>
           <Image
             src={logo}
             alt='Swiss AI Automation'
@@ -15,8 +15,8 @@ const Header = () => {
             // width={40}
             className='object-contain'
           />
-           <h1 className='text-4xl items-center gap-2 hidden md:flex'>
-            Swiss AI Automation Dashboard
+           <h1 className='items-center gap-2 text-2xl sm:text-4xl truncate'>
+            Dashboard
           </h1>
         </Link>
         <SignedIn>
