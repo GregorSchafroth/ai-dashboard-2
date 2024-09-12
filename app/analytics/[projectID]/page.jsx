@@ -11,7 +11,7 @@ const page = async ({ params }) => {
     console.error('Failed to load transcripts:', error);
   }
 
-  console.log('DATA', data);
+  // console.log('DATA', data);
   
   return (
     <Analytics />
