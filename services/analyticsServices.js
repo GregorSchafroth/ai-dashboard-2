@@ -19,43 +19,31 @@ async function getApiKey() {
   return apiKey;
 }
 
-export async function getTranscripts(projectID) {
+export async function getAnalytics(projectID) {
   const apiKey = await getApiKey();
 
-  const url = `https://api.voiceflow.com/v2/transcripts/${projectID}`;
+  const url = 'https://analytics-api.voiceflow.com/v1/query/usage';
   const options = {
-    method: 'GET',
+    method: 'POST',
     headers: {
       accept: 'application/json',
-      Authorization: apiKey,
+      'content-type': 'application/json',
+      authorization: apiKey,
     },
+    body: JSON.stringify({
+      query: [
+        {
+          name: 'sessions',
+          filter: { projectID: projectID },
+          interval: 'day',
+        },
+      ],
+    }),
   };
 
   const res = await fetch(url, options);
   if (!res.ok) {
-    throw new Error('Failed to fetch transcripts');
-  }
-  return res.json();
-}
-
-export async function getTranscript(projectID, transcriptID) {
-  const apiKey = await getApiKey();
-
-  const url = `https://api.voiceflow.com/v2/transcripts/${projectID}/${transcriptID}`;
-
-  console.log('url', url);
-
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: apiKey,
-    },
-  };
-
-  const res = await fetch(url, options);
-  if (!res.ok) {
-    throw new Error('Failed to fetch transcripts');
+    throw new Error('Failed to fetch analytics');
   }
   return res.json();
 }

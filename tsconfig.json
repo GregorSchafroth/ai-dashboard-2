@@ -29,6 +29,6 @@
     "services/transcriptServices.js",
     "app/transcripts/[projectID]/page.jsx",
     "components/Transcripts.jsx"
-, "components/Transcript.jsx", "app/page.jsx", "middleware.js"  ],
+, "components/Transcript.jsx", "app/page.jsx", "middleware.js", "components/Header.jsx"  ],
   "exclude": ["node_modules"]
 }
