@@ -27,6 +27,8 @@ export default async function RootLayout({
     projectId = '66652e6d0c5aef4fa4bc0f22';
   } else if (userEmail === 'antonio@flyingteachers.com') {
     projectId = '66652e6d0c5aef4fa4bc0f22';
+  } else if (userEmail === 'support@flyingteachers.com') {
+    projectId = '66652e6d0c5aef4fa4bc0f22';
   } else if (userEmail === 'sollkrash@gmail.com') {
     projectId = '6661676863f440c855dad674';
   } else if (userEmail === 'leitung@hallodeutschschule.ch') {

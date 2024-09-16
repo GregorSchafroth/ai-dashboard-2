@@ -10,6 +10,8 @@ async function getApiKey() {
     apiKey = process.env.FT_VOICEFLOW_API_KEY;
   } else if (userEmail === 'antonio@flyingteachers.com') {
     apiKey = process.env.FT_VOICEFLOW_API_KEY;
+  } else if (userEmail === 'support@flyingteachers.com') {
+    apiKey = process.env.FT_VOICEFLOW_API_KEY;
   } else if (userEmail === 'sollkrash@gmail.com') {
     apiKey = process.env.HD_VOICEFLOW_API_KEY;
   } else if (userEmail === 'leitung@hallodeutschschule.ch') {
