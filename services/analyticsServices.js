@@ -21,7 +21,7 @@ async function getApiKey() {
   return apiKey;
 }
 
-export async function getAnalytics(projectID) {
+export async function getSessions(projectID, startDay, endDay) {
   const apiKey = await getApiKey();
 
   const url = 'https://analytics-api.voiceflow.com/v1/query/usage';
@@ -36,8 +36,11 @@ export async function getAnalytics(projectID) {
       query: [
         {
           name: 'sessions',
-          filter: { projectID: projectID },
-          interval: 'day',
+          filter: {
+            projectID: projectID,
+            startTime: `${startDay}T00:00:00.000Z`,
+            endTime: `${endDay}T23:59:59.999Z`,
+           },
         },
       ],
     }),
