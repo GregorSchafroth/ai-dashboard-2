@@ -51,7 +51,8 @@ export default function Analytics({ dailyData, monthlyData }) {
   };
 
   return (
-    <div className="flex flex-col gap-4 m-4">
+    <div className="flex flex-col lg:flex-row gap-4 m-4">
+      <div className="flex-1 overflow-auto">
       <Card>
         <CardHeader>
           <CardTitle>Daily Data Chart</CardTitle>
@@ -99,6 +100,8 @@ export default function Analytics({ dailyData, monthlyData }) {
           </ChartContainer>
         </CardContent>
       </Card>
+      </div>
+      <div className="flex-1 overflow-auto">
       <Card>
         <CardHeader>
           <CardTitle>Monthly Data Chart</CardTitle>
@@ -146,6 +149,7 @@ export default function Analytics({ dailyData, monthlyData }) {
           </ChartContainer>
         </CardContent>
       </Card>
+      </div>
     </div>
   )
 }
