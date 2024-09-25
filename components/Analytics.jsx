@@ -55,7 +55,7 @@ export default function Analytics({ dailyData, monthlyData }) {
       <div className="flex-1 overflow-auto">
       <Card>
         <CardHeader>
-          <CardTitle>Daily Data Chart</CardTitle>
+          <CardTitle>Daily Users</CardTitle>
           <CardDescription>
             Showing session counts for the past 7 days
           </CardDescription>
@@ -104,7 +104,7 @@ export default function Analytics({ dailyData, monthlyData }) {
       <div className="flex-1 overflow-auto">
       <Card>
         <CardHeader>
-          <CardTitle>Monthly Data Chart</CardTitle>
+          <CardTitle>Monthly Users</CardTitle>
           <CardDescription>
             Showing session counts for the past 12 months
           </CardDescription>

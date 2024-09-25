@@ -44,6 +44,26 @@ const Header = async ({ projectId }) => {
               >
                 Analytics
               </Link>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span>
+                      <Link
+                        href='#'
+                        className={`${buttonVariants({
+                          variant: 'ghost',
+                        })} cursor-not-allowed opacity-50`}
+                        aria-disabled='true'
+                      >
+                        Knowledge
+                      </Link>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>coming soon</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
           </SignedIn>
         </div>
