@@ -168,7 +168,7 @@ const EditableKnowledgeBase = ({ initialFaqs = [], initialDocumentID }) => {
       </Card>
       <div>
         <Button onClick={handleUpdate} disabled={isLoading}>
-          {isLoading ? 'Saving...' : 'Save FAQs'}
+          {isLoading ? 'Saving...' : 'Save Questions'}
         </Button>
       </div>
     </div>

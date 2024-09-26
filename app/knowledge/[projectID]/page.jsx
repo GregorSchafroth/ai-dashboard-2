@@ -40,10 +40,10 @@ const KnowledgePage = async () => {
       <Card className='flex-grow m-4 p-4'>
         <CardContent className='p-0'>
           <div>
-            🇬🇧 Please ensure to save your changes by clicking the "Save FAQs"
+            🇬🇧 Please ensure to save your changes by clicking the "Save Questions"
             button below. <br />
             🇩🇪 Bitte stellen Sie sicher, dass Sie Ihre Änderungen speichern,
-            indem Sie unten auf den Knopf „Save FAQs“ klicken.
+            indem Sie unten auf den Knopf „Save Questions“ klicken.
           </div>
         </CardContent>
       </Card>
